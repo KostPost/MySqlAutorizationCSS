@@ -13,10 +13,11 @@ namespace MySqlAutorizationCSS
 
             MainContoller contoller = new MainContoller();
             string choice;
+            bool working = true;
             do
             {
                 Console.WriteLine("Choice action:\n1 - See all accounts\n2 - Create account\n" +
-                    "3 - Find by Name\n4 - Find by ID");
+                    "3 - Find by Name\n4 - Find by ID\n 5 - Exit");
                 choice = Console.ReadLine();
 
                 switch (choice)
@@ -91,15 +92,21 @@ namespace MySqlAutorizationCSS
                         {
                             Console.WriteLine($"Account with name - {idToFind} doesn't exist");
                         }
-
                         break;
+
+
+                    case "5":
+                        Console.WriteLine("Exit");
+                        working = false;
+                        break;
+
 
                 }
                 
 
 
 
-            } while (true);
+            } while (working);
 
         }
 
